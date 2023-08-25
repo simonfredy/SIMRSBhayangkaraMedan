@@ -2397,7 +2397,7 @@
             // INSTALASI HEMODIALISA BPJS LAMA
             while ($row_hemodialisabpjsllma = $hasil_hemodialisabpjsllma->fetch_assoc()) {
                 echo "<td align='center'>".$row_hemodialisabpjsllma['HEMODIALISABPJSLLMA']."</td>";                
-            }   
+            }
             while ($row_hemodialisabpjsplma = $hasil_hemodialisabpjsplma->fetch_assoc()) {
                 echo "<td align='center'>".$row_hemodialisabpjsplma['HEMODIALISABPJSPLMA']."</td>";                
             }

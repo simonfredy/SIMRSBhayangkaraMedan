@@ -1,4 +1,4 @@
- <?php   
+<?php   
     require_once('koneksi.php');
 
             // IGD UMUM L & P BARU
@@ -428,38 +428,38 @@
             $hasil_pdlmkghumumpbru = $koneksi->query($query_pdlmkghumumpbru);
 
             // KLINIK SP. PENYAKIT DALAM - KGH UMUM L & P LAMA
-            $query_pdlmkghumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_pdlmkghumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $query_pdlmkghumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $query_pdlmkghumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
             $hasil_pdlmkghumumllma = $koneksi->query($query_pdlmkghumumllma);
             $hasil_pdlmkghumumplma = $koneksi->query($query_pdlmkghumumplma);
 
-            // KLINIK SP. PENYAKIT DALAM - KGEH BPJS L & P BARU
-            $query_pdlmkgehbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGEHBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_pdlmkgehbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGEHBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_pdlmkgehbpjslbru = $koneksi->query($query_pdlmkgehbpjslbru);
-            $hasil_pdlmkgehbpjspbru = $koneksi->query($query_pdlmkgehbpjspbru);
+            // KLINIK SP. PENYAKIT DALAM - KGH BPJS L & P BARU
+            $query_pdlmkghbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            $query_pdlmkghbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            $hasil_pdlmkghbpjslbru = $koneksi->query($query_pdlmkghbpjslbru);
+            $hasil_pdlmkghbpjspbru = $koneksi->query($query_pdlmkghbpjspbru);
 
-            // KLINIK SP. PENYAKIT DALAM - KGEH BPJS L & P LAMA
-            $query_pdlmkgehbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGEHBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_pdlmkgehbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGEHBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_pdlmkgehbpjsllma = $koneksi->query($query_pdlmkgehbpjsllma);
-            $hasil_pdlmkgehbpjsplma = $koneksi->query($query_pdlmkgehbpjsplma);
+            // KLINIK SP. PENYAKIT DALAM - KGH BPJS L & P LAMA
+            $query_pdlmkghbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $query_pdlmkghbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $hasil_pdlmkghbpjsllma = $koneksi->query($query_pdlmkghbpjsllma);
+            $hasil_pdlmkghbpjsplma = $koneksi->query($query_pdlmkghbpjsplma);
 
-            // KLINIK SP. PENYAKIT DALAM - KGEH JASA RAHARJA L & P BARU
-            $query_pdlmkgehjasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGEHJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_pdlmkgehjasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGEHJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_pdlmkgehjasaraharjalbru = $koneksi->query($query_pdlmkgehjasaraharjalbru);
-            $hasil_pdlmkgehjasaraharjapbru = $koneksi->query($query_pdlmkgehjasaraharjapbru);
+            // KLINIK SP. PENYAKIT DALAM - KGH JASA RAHARJA L & P BARU
+            $query_pdlmkghjasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            $query_pdlmkghjasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            $hasil_pdlmkghjasaraharjalbru = $koneksi->query($query_pdlmkghjasaraharjalbru);
+            $hasil_pdlmkghjasaraharjapbru = $koneksi->query($query_pdlmkghjasaraharjapbru);
             
-            // KLINIK SP. PENYAKIT DALAM - KGEH JASA RAHARJA L & P LAMA
-            $query_pdlmkgehjasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGEHJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_pdlmkgehjasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGEHJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_pdlmkgehjasaraharjallma = $koneksi->query($query_pdlmkgehjasaraharjallma);
-            $hasil_pdlmkgehjasaraharjaplma = $koneksi->query($query_pdlmkgehjasaraharjaplma);
+            // KLINIK SP. PENYAKIT DALAM - KGH JASA RAHARJA L & P LAMA
+            $query_pdlmkghjasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $query_pdlmkghjasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as PDLMKGHJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $hasil_pdlmkghjasaraharjallma = $koneksi->query($query_pdlmkghjasaraharjallma);
+            $hasil_pdlmkghjasaraharjaplma = $koneksi->query($query_pdlmkghjasaraharjaplma);
 
             // KLINIK SP. PENYAKIT DALAM - KGEH TOTAL KESELURUHAN
-            $query_pdlmkgehtotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as PDLMKGEHTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM - KGEH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_pdlmkgehtotal = $koneksi->query($query_pdlmkgehtotal);
+            $query_pdlmkghtotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as PDLMKGHTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'KLINIK SP. PENYAKIT DALAM KGH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
+            $hasil_pdlmkghtotal = $koneksi->query($query_pdlmkghtotal);
             
             
             // KLINIK SP. PENYAKIT DALAM - KGEH
@@ -924,45 +924,45 @@
             $hasil_spklktotal = $koneksi->query($query_spklktotal);
 
 
-            // KLINIK SP. THT - KL
-            // KLINIK SP. THT - KL UMUM L & P BARU
-            $query_spthtklumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_spthtklumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            // KLINIK SP. THT KL
+            // KLINIK SP. THT KL UMUM L & P BARU
+            $query_spthtklumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            $query_spthtklumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
             $hasil_spthtklumumlbru = $koneksi->query($query_spthtklumumlbru);
             $hasil_spthtklumumpbru = $koneksi->query($query_spthtklumumpbru);
 
-            // KLINIK SP. THT - KL UMUM L & P LAMA
-            $query_spthtklumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_spthtklumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            // KLINIK SP. THT KL UMUM L & P LAMA
+            $query_spthtklumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $query_spthtklumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
             $hasil_spthtklumumllma = $koneksi->query($query_spthtklumumllma);
             $hasil_spthtklumumplma = $koneksi->query($query_spthtklumumplma);
 
-            // KLINIK SP. THT - KL BPJS L & P BARU
-            $query_spthtklbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_spthtklbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            // KLINIK SP. THT KL BPJS L & P BARU
+            $query_spthtklbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            $query_spthtklbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
             $hasil_spthtklbpjslbru = $koneksi->query($query_spthtklbpjslbru);
             $hasil_spthtklbpjspbru = $koneksi->query($query_spthtklbpjspbru);
 
-            // KLINIK SP. THT - KL BPJS L & P LAMA
-            $query_spthtklbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_spthtklbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            // KLINIK SP. THT KL BPJS L & P LAMA
+            $query_spthtklbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $query_spthtklbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
             $hasil_spthtklbpjsllma = $koneksi->query($query_spthtklbpjsllma);
             $hasil_spthtklbpjsplma = $koneksi->query($query_spthtklbpjsplma);
 
-            // KLINIK SP. THT - KL JASA RAHARJA L & P BARU
-            $query_spthtkljasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_spthtkljasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            // KLINIK SP. THT KL JASA RAHARJA L & P BARU
+            $query_spthtkljasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
+            $query_spthtkljasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
             $hasil_spthtkljasaraharjalbru = $koneksi->query($query_spthtkljasaraharjalbru);
             $hasil_spthtkljasaraharjapbru = $koneksi->query($query_spthtkljasaraharjapbru);
             
-            // KLINIK SP. THT - KL JASA RAHARJA L & P LAMA
-            $query_spthtkljasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_spthtkljasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            // KLINIK SP. THT KL JASA RAHARJA L & P LAMA
+            $query_spthtkljasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
+            $query_spthtkljasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as SPTHTKLJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
             $hasil_spthtkljasaraharjallma = $koneksi->query($query_spthtkljasaraharjallma);
             $hasil_spthtkljasaraharjaplma = $koneksi->query($query_spthtkljasaraharjaplma);
 
-            // KLINIK SP. THT - KL TOTAL KESELURUHAN
-            $query_spthtkltotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as SPTHTKLTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'KLINIK SP. THT - KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
+            // KLINIK SP. THT KL TOTAL KESELURUHAN
+            $query_spthtkltotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as SPTHTKLTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'KLINIK SP. THT KL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
             $hasil_spthtkltotal = $koneksi->query($query_spthtkltotal);
 
 
@@ -1594,132 +1594,6 @@
             $hasil_sppsikiatritotal = $koneksi->query($query_sppsikiatritotal);
 
 
-            // UNIT RADIOLOGI
-            // UNIT RADIOLOGI UMUM L & P BARU
-            $query_radiologiumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_radiologiumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_radiologiumumlbru = $koneksi->query($query_radiologiumumlbru);
-            $hasil_radiologiumumpbru = $koneksi->query($query_radiologiumumpbru);
-
-            // UNIT RADIOLOGI UMUM L & P LAMA
-            $query_radiologiumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_radiologiumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_radiologiumumllma = $koneksi->query($query_radiologiumumllma);
-            $hasil_radiologiumumplma = $koneksi->query($query_radiologiumumplma);
-
-            // UNIT RADIOLOGI BPJS L & P BARU
-            $query_radiologibpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_radiologibpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_radiologibpjslbru = $koneksi->query($query_radiologibpjslbru);
-            $hasil_radiologibpjspbru = $koneksi->query($query_radiologibpjspbru);
-
-            // UNIT RADIOLOGI BPJS L & P LAMA
-            $query_radiologibpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_radiologibpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_radiologibpjsllma = $koneksi->query($query_radiologibpjsllma);
-            $hasil_radiologibpjsplma = $koneksi->query($query_radiologibpjsplma);
-
-            // UNIT RADIOLOGI JASA RAHARJA L & P BARU
-            $query_radiologijasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_radiologijasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_radiologijasaraharjalbru = $koneksi->query($query_radiologijasaraharjalbru);
-            $hasil_radiologijasaraharjapbru = $koneksi->query($query_radiologijasaraharjapbru);
-            
-            // UNIT RADIOLOGI JASA RAHARJA L & P LAMA
-            $query_radiologijasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_radiologijasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as RADIOLOGIJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_radiologijasaraharjallma = $koneksi->query($query_radiologijasaraharjallma);
-            $hasil_radiologijasaraharjaplma = $koneksi->query($query_radiologijasaraharjaplma);
-
-            // UNIT RADIOLOGI TOTAL KESELURUHAN
-            $query_radiologitotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as RADIOLOGITOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'UNIT RADIOLOGI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_radiologitotal = $koneksi->query($query_radiologitotal);
-
-
-            // UNIT CSSD
-            // UNIT CSSD UMUM L & P BARU
-            $query_cssdumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_cssdumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_cssdumumlbru = $koneksi->query($query_cssdumumlbru);
-            $hasil_cssdumumpbru = $koneksi->query($query_cssdumumpbru);
-
-            // UNIT CSSD UMUM L & P LAMA
-            $query_cssdumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_cssdumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_cssdumumllma = $koneksi->query($query_cssdumumllma);
-            $hasil_cssdumumplma = $koneksi->query($query_cssdumumplma);
-
-            // UNIT CSSD BPJS L & P BARU
-            $query_cssdbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_cssdbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_cssdbpjslbru = $koneksi->query($query_cssdbpjslbru);
-            $hasil_cssdbpjspbru = $koneksi->query($query_cssdbpjspbru);
-
-            // UNIT CSSD BPJS L & P LAMA
-            $query_cssdbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_cssdbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_cssdbpjsllma = $koneksi->query($query_cssdbpjsllma);
-            $hasil_cssdbpjsplma = $koneksi->query($query_cssdbpjsplma);
-
-            // UNIT CSSD JASA RAHARJA L & P BARU
-            $query_cssdjasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_cssdjasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_cssdjasaraharjalbru = $koneksi->query($query_cssdjasaraharjalbru);
-            $hasil_cssdjasaraharjapbru = $koneksi->query($query_cssdjasaraharjapbru);
-            
-            // UNIT CSSD JASA RAHARJA L & P LAMA
-            $query_cssdjasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_cssdjasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as CSSDJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_cssdjasaraharjallma = $koneksi->query($query_cssdjasaraharjallma);
-            $hasil_cssdjasaraharjaplma = $koneksi->query($query_cssdjasaraharjaplma);
-
-            // UNIT CSSD TOTAL KESELURUHAN
-            $query_cssdtotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as CSSDTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'UNIT CSSD' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_cssdtotal = $koneksi->query($query_cssdtotal);
-
-
-            // INSTALASI FARMASI
-            // INSTALASI FARMASI UMUM L & P BARU
-            $query_farmasiumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_farmasiumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_farmasiumumlbru = $koneksi->query($query_farmasiumumlbru);
-            $hasil_farmasiumumpbru = $koneksi->query($query_farmasiumumpbru);
-
-            // INSTALASI FARMASI UMUM L & P LAMA
-            $query_farmasiumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_farmasiumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_farmasiumumllma = $koneksi->query($query_farmasiumumllma);
-            $hasil_farmasiumumplma = $koneksi->query($query_farmasiumumplma);
-
-            // INSTALASI FARMASI BPJS L & P BARU
-            $query_farmasibpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_farmasibpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_farmasibpjslbru = $koneksi->query($query_farmasibpjslbru);
-            $hasil_farmasibpjspbru = $koneksi->query($query_farmasibpjspbru);
-
-            // INSTALASI FARMASI BPJS L & P LAMA
-            $query_farmasibpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_farmasibpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_farmasibpjsllma = $koneksi->query($query_farmasibpjsllma);
-            $hasil_farmasibpjsplma = $koneksi->query($query_farmasibpjsplma);
-
-            // INSTALASI FARMASI JASA RAHARJA L & P BARU
-            $query_farmasijasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_farmasijasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_farmasijasaraharjalbru = $koneksi->query($query_farmasijasaraharjalbru);
-            $hasil_farmasijasaraharjapbru = $koneksi->query($query_farmasijasaraharjapbru);
-            
-            // INSTALASI FARMASI JASA RAHARJA L & P LAMA
-            $query_farmasijasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_farmasijasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as FARMASIJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_farmasijasaraharjallma = $koneksi->query($query_farmasijasaraharjallma);
-            $hasil_farmasijasaraharjaplma = $koneksi->query($query_farmasijasaraharjaplma);
-
-            // INSTALASI FARMASI TOTAL KESELURUHAN
-            $query_farmasitotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as FARMASITOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'INSTALASI FARMASI' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_farmasitotal = $koneksi->query($query_farmasitotal);
-
-
             // INSTALASI HEMODIALISA
             // INSTALASI HEMODIALISA UMUM L & P BARU
             $query_hemodialisaumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as HEMODIALISAUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI HEMODIALISA' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
@@ -1760,259 +1634,7 @@
             // INSTALASI HEMODIALISA TOTAL KESELURUHAN
             $query_hemodialisatotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as HEMODIALISATOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'INSTALASI HEMODIALISA' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
             $hasil_hemodialisatotal = $koneksi->query($query_hemodialisatotal);
-
-
-            // INSTALASI NEONATUS
-            // INSTALASI NEONATUS UMUM L & P BARU
-            $query_neonatusumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_neonatusumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_neonatusumumlbru = $koneksi->query($query_neonatusumumlbru);
-            $hasil_neonatusumumpbru = $koneksi->query($query_neonatusumumpbru);
-
-            // INSTALASI NEONATUS UMUM L & P LAMA
-            $query_neonatusumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_neonatusumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_neonatusumumllma = $koneksi->query($query_neonatusumumllma);
-            $hasil_neonatusumumplma = $koneksi->query($query_neonatusumumplma);
-
-            // INSTALASI NEONATUS BPJS L & P BARU
-            $query_neonatusbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_neonatusbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_neonatusbpjslbru = $koneksi->query($query_neonatusbpjslbru);
-            $hasil_neonatusbpjspbru = $koneksi->query($query_neonatusbpjspbru);
-
-            // INSTALASI NEONATUS BPJS L & P LAMA
-            $query_neonatusbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_neonatusbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_neonatusbpjsllma = $koneksi->query($query_neonatusbpjsllma);
-            $hasil_neonatusbpjsplma = $koneksi->query($query_neonatusbpjsplma);
-
-            // INSTALASI NEONATUS JASA RAHARJA L & P BARU
-            $query_neonatusjasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_neonatusjasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_neonatusjasaraharjalbru = $koneksi->query($query_neonatusjasaraharjalbru);
-            $hasil_neonatusjasaraharjapbru = $koneksi->query($query_neonatusjasaraharjapbru);
             
-            // INSTALASI NEONATUS JASA RAHARJA L & P LAMA
-            $query_neonatusjasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_neonatusjasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NEONATUSJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_neonatusjasaraharjallma = $koneksi->query($query_neonatusjasaraharjallma);
-            $hasil_neonatusjasaraharjaplma = $koneksi->query($query_neonatusjasaraharjaplma);
-
-            // INSTALASI NEONATUS TOTAL KESELURUHAN
-            $query_neonatustotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as NEONATUSTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'INSTALASI NEONATUS' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_neonatustotal = $koneksi->query($query_neonatustotal);
-
-
-            // 	INSTALASI INTENSIVE CARE UNIT
-            // 	INSTALASI INTENSIVE CARE UNIT UMUM L & P BARU
-            $query_icuumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_icuumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_icuumumlbru = $koneksi->query($query_icuumumlbru);
-            $hasil_icuumumpbru = $koneksi->query($query_icuumumpbru);
-
-            // 	INSTALASI INTENSIVE CARE UNIT UMUM L & P LAMA
-            $query_icuumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_icuumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_icuumumllma = $koneksi->query($query_icuumumllma);
-            $hasil_icuumumplma = $koneksi->query($query_icuumumplma);
-
-            // 	INSTALASI INTENSIVE CARE UNIT BPJS L & P BARU
-            $query_icubpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_icubpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_icubpjslbru = $koneksi->query($query_icubpjslbru);
-            $hasil_icubpjspbru = $koneksi->query($query_icubpjspbru);
-
-            // 	INSTALASI INTENSIVE CARE UNIT BPJS L & P LAMA
-            $query_icubpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_icubpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_icubpjsllma = $koneksi->query($query_icubpjsllma);
-            $hasil_icubpjsplma = $koneksi->query($query_icubpjsplma);
-
-            // 	INSTALASI INTENSIVE CARE UNIT JASA RAHARJA L & P BARU
-            $query_icujasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_icujasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_icujasaraharjalbru = $koneksi->query($query_icujasaraharjalbru);
-            $hasil_icujasaraharjapbru = $koneksi->query($query_icujasaraharjapbru);
-            
-            // 	INSTALASI INTENSIVE CARE UNIT JASA RAHARJA L & P LAMA
-            $query_icujasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_icujasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as ICUJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_icujasaraharjallma = $koneksi->query($query_icujasaraharjallma);
-            $hasil_icujasaraharjaplma = $koneksi->query($query_icujasaraharjaplma);
-
-            // 	INSTALASI INTENSIVE CARE UNIT TOTAL KESELURUHAN
-            $query_icutotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as ICUTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'INSTALASI INTENSIVE CARE UNIT' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_icutotal = $koneksi->query($query_icutotal);
-
-
-            //  INSTALASI KAMAR BEDAH
-            //  INSTALASI KAMAR BEDAH UMUM L & P BARU
-            $query_kmrbedahumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_kmrbedahumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_kmrbedahumumlbru = $koneksi->query($query_kmrbedahumumlbru);
-            $hasil_kmrbedahumumpbru = $koneksi->query($query_kmrbedahumumpbru);
-
-            //  INSTALASI KAMAR BEDAH UMUM L & P LAMA
-            $query_kmrbedahumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_kmrbedahumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_kmrbedahumumllma = $koneksi->query($query_kmrbedahumumllma);
-            $hasil_kmrbedahumumplma = $koneksi->query($query_kmrbedahumumplma);
-
-            //  INSTALASI KAMAR BEDAH BPJS L & P BARU
-            $query_kmrbedahbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_kmrbedahbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_kmrbedahbpjslbru = $koneksi->query($query_kmrbedahbpjslbru);
-            $hasil_kmrbedahbpjspbru = $koneksi->query($query_kmrbedahbpjspbru);
-
-            //  INSTALASI KAMAR BEDAH BPJS L & P LAMA
-            $query_kmrbedahbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_kmrbedahbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_kmrbedahbpjsllma = $koneksi->query($query_kmrbedahbpjsllma);
-            $hasil_kmrbedahbpjsplma = $koneksi->query($query_kmrbedahbpjsplma);
-
-            //  INSTALASI KAMAR BEDAH JASA RAHARJA L & P BARU
-            $query_kmrbedahjasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_kmrbedahjasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_kmrbedahjasaraharjalbru = $koneksi->query($query_kmrbedahjasaraharjalbru);
-            $hasil_kmrbedahjasaraharjapbru = $koneksi->query($query_kmrbedahjasaraharjapbru);
-            
-            //  INSTALASI KAMAR BEDAH JASA RAHARJA L & P LAMA
-            $query_kmrbedahjasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_kmrbedahjasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as KMRBEDAHJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_kmrbedahjasaraharjallma = $koneksi->query($query_kmrbedahjasaraharjallma);
-            $hasil_kmrbedahjasaraharjaplma = $koneksi->query($query_kmrbedahjasaraharjaplma);
-
-            //  INSTALASI KAMAR BEDAH TOTAL KESELURUHAN
-            $query_kmrbedahtotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as KMRBEDAHTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'INSTALASI KAMAR BEDAH' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_kmrbedahtotal = $koneksi->query($query_kmrbedahtotal);
-
-
-            //  INSTALSAI LABORATORIUM
-            //  INSTALSAI LABORATORIUM UMUM L & P BARU
-            $query_labumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_labumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_labumumlbru = $koneksi->query($query_labumumlbru);
-            $hasil_labumumpbru = $koneksi->query($query_labumumpbru);
-
-            //  INSTALSAI LABORATORIUM UMUM L & P LAMA
-            $query_labumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_labumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_labumumllma = $koneksi->query($query_labumumllma);
-            $hasil_labumumplma = $koneksi->query($query_labumumplma);
-
-            //  INSTALSAI LABORATORIUM BPJS L & P BARU
-            $query_labbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_labbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_labbpjslbru = $koneksi->query($query_labbpjslbru);
-            $hasil_labbpjspbru = $koneksi->query($query_labbpjspbru);
-
-            //  INSTALSAI LABORATORIUM BPJS L & P LAMA
-            $query_labbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_labbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_labbpjsllma = $koneksi->query($query_labbpjsllma);
-            $hasil_labbpjsplma = $koneksi->query($query_labbpjsplma);
-
-            //  INSTALSAI LABORATORIUM JASA RAHARJA L & P BARU
-            $query_labjasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_labjasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_labjasaraharjalbru = $koneksi->query($query_labjasaraharjalbru);
-            $hasil_labjasaraharjapbru = $koneksi->query($query_labjasaraharjapbru);
-            
-            //  INSTALSAI LABORATORIUM JASA RAHARJA L & P LAMA
-            $query_labjasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_labjasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as LABJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_labjasaraharjallma = $koneksi->query($query_labjasaraharjallma);
-            $hasil_labjasaraharjaplma = $koneksi->query($query_labjasaraharjaplma);
-
-            //  INSTALSAI LABORATORIUM TOTAL KESELURUHAN
-            $query_labtotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as LABTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'INSTALSAI LABORATORIUM' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_labtotal = $koneksi->query($query_labtotal);
-
-
-            //  INSTALASI NICU
-            //  INSTALASI NICU UMUM L & P BARU
-            $query_nicuumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_nicuumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_nicuumumlbru = $koneksi->query($query_nicuumumlbru);
-            $hasil_nicuumumpbru = $koneksi->query($query_nicuumumpbru);
-
-            //  INSTALASI NICU UMUM L & P LAMA
-            $query_nicuumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_nicuumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_nicuumumllma = $koneksi->query($query_nicuumumllma);
-            $hasil_nicuumumplma = $koneksi->query($query_nicuumumplma);
-
-            //  INSTALASI NICU BPJS L & P BARU
-            $query_nicubpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_nicubpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_nicubpjslbru = $koneksi->query($query_nicubpjslbru);
-            $hasil_nicubpjspbru = $koneksi->query($query_nicubpjspbru);
-
-            //  INSTALASI NICU BPJS L & P LAMA
-            $query_nicubpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_nicubpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_nicubpjsllma = $koneksi->query($query_nicubpjsllma);
-            $hasil_nicubpjsplma = $koneksi->query($query_nicubpjsplma);
-
-            //  INSTALASI NICU JASA RAHARJA L & P BARU
-            $query_nicujasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_nicujasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_nicujasaraharjalbru = $koneksi->query($query_nicujasaraharjalbru);
-            $hasil_nicujasaraharjapbru = $koneksi->query($query_nicujasaraharjapbru);
-            
-            //  INSTALASI NICU JASA RAHARJA L & P LAMA
-            $query_nicujasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_nicujasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as NICUJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_nicujasaraharjallma = $koneksi->query($query_nicujasaraharjallma);
-            $hasil_nicujasaraharjaplma = $koneksi->query($query_nicujasaraharjaplma);
-
-            //  INSTALASI NICU TOTAL KESELURUHAN
-            $query_nicutotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as NICUTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'INSTALASI NICU' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_nicutotal = $koneksi->query($query_nicutotal);
-
-
-            //  INSTALASI DOKPOL
-            //  INSTALASI DOKPOL UMUM L & P BARU
-            $query_dokpolumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_dokpolumumpbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLUMUMPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_dokpolumumlbru = $koneksi->query($query_dokpolumumlbru);
-            $hasil_dokpolumumpbru = $koneksi->query($query_dokpolumumpbru);
-
-            //  INSTALASI DOKPOL UMUM L & P LAMA
-            $query_dokpolumumllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLUMUMLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_dokpolumumplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLUMUMPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_dokpolumumllma = $koneksi->query($query_dokpolumumllma);
-            $hasil_dokpolumumplma = $koneksi->query($query_dokpolumumplma);
-
-            //  INSTALASI DOKPOL BPJS L & P BARU
-            $query_dokpolbpjslbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLBPJSLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_dokpolbpjspbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLBPJSPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_dokpolbpjslbru = $koneksi->query($query_dokpolbpjslbru);
-            $hasil_dokpolbpjspbru = $koneksi->query($query_dokpolbpjspbru);
-
-            //  INSTALASI DOKPOL BPJS L & P LAMA
-            $query_dokpolbpjsllma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLBPJSLLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_dokpolbpjsplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLBPJSPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'BPJ' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_dokpolbpjsllma = $koneksi->query($query_dokpolbpjsllma);
-            $hasil_dokpolbpjsplma = $koneksi->query($query_dokpolbpjsplma);
-
-            //  INSTALASI DOKPOL JASA RAHARJA L & P BARU
-            $query_dokpoljasaraharjalbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLJASARAHARJALBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $query_dokpoljasaraharjapbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLJASARAHARJAPBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' ";
-            $hasil_dokpoljasaraharjalbru = $koneksi->query($query_dokpoljasaraharjalbru);
-            $hasil_dokpoljasaraharjapbru = $koneksi->query($query_dokpoljasaraharjapbru);
-            
-            //  INSTALASI DOKPOL JASA RAHARJA L & P LAMA
-            $query_dokpoljasaraharjallma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLJASARAHARJALLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'L' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $query_dokpoljasaraharjaplma = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as DOKPOLJASARAHARJAPLMA FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'JSR' AND pasien.jk = 'P' AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Lama' ";
-            $hasil_dokpoljasaraharjallma = $koneksi->query($query_dokpoljasaraharjallma);
-            $hasil_dokpoljasaraharjaplma = $koneksi->query($query_dokpoljasaraharjaplma);
-
-            //  INSTALASI DOKPOL TOTAL KESELURUHAN
-            $query_dokpoltotal = "SELECT poliklinik.nm_poli, COUNT(reg_periksa.no_rkm_medis) as DOKPOLTOTAL FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien INNER JOIN penjab WHERE reg_periksa.kd_pj = penjab.kd_pj AND poliklinik.nm_poli = 'INSTALASI DOKPOL' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli" ;
-            $hasil_dokpoltotal = $koneksi->query($query_dokpoltotal);
-
 
             //  TOTAL KESELURUHAN UMUM BARU SEMUA POLI
             $query_totalumumlbru = "SELECT poliklinik.nm_poli, count(reg_periksa.kd_pj) as TOTALUMUMLBRU FROM reg_periksa INNER JOIN poliklinik INNER JOIN pasien WHERE reg_periksa.kd_pj = 'UMU' AND pasien.jk = 'L' AND reg_periksa.tgl_registrasi = CURDATE() AND reg_periksa.no_rkm_medis=pasien.no_rkm_medis AND reg_periksa.kd_poli=poliklinik.kd_poli AND reg_periksa.stts_daftar='Baru' " ;
