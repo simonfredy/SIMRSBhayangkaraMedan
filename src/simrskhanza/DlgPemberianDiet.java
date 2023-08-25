@@ -216,6 +216,7 @@ public class DlgPemberianDiet extends javax.swing.JDialog {
     private DlgCariDiet diet=new DlgCariDiet(null,false);
     private DlgCariBangsal bangsal=new DlgCariBangsal(null,false);
     private DlgCariJamDiet jamdiet=new DlgCariJamDiet(null,false);
+    private DlgCariBentukMakan bentukmakan=new DlgCariBentukMakan(null,false);
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -1226,11 +1227,16 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_MnSisaDietPasienActionPerformed
 
     private void BtnSeek3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeek3ActionPerformed
-        // TODO add your handling code here:
+        akses.setform("DlgPemberianDiet");        
+        bentukmakan.emptTeks();
+        bentukmakan.isCek();
+        bentukmakan.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        bentukmakan.setLocationRelativeTo(internalFrame1);
+        bentukmakan.setVisible(true);
     }//GEN-LAST:event_BtnSeek3ActionPerformed
 
     private void BtnSeek3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnSeek3KeyPressed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_BtnSeek3KeyPressed
 
     /**
