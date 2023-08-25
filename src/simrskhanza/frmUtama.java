@@ -1666,6 +1666,7 @@ public class frmUtama extends javax.swing.JFrame {
         MnKoleksiPenelitian = new javax.swing.JMenuItem();
         MnCariEbook = new javax.swing.JMenuItem();
         MnCariInventarisPerpustakaan = new javax.swing.JMenuItem();
+        MnLaporanHarianPoli = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         MnAnjungan = new javax.swing.JMenuItem();
         jSeparator12 = new javax.swing.JPopupMenu.Separator();
@@ -7843,6 +7844,20 @@ public class frmUtama extends javax.swing.JFrame {
             }
         });
         jMenu6.add(MnCariInventarisPerpustakaan);
+
+        MnLaporanHarianPoli.setBackground(new java.awt.Color(255, 255, 254));
+        MnLaporanHarianPoli.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnLaporanHarianPoli.setForeground(new java.awt.Color(50, 90, 40));
+        MnLaporanHarianPoli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Preview.png"))); // NOI18N
+        MnLaporanHarianPoli.setText("Laporan Harian Poli");
+        MnLaporanHarianPoli.setName("MnLaporanHarianPoli"); // NOI18N
+        MnLaporanHarianPoli.setPreferredSize(new java.awt.Dimension(220, 30));
+        MnLaporanHarianPoli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnLaporanHarianPoliActionPerformed(evt);
+            }
+        });
+        jMenu6.add(MnLaporanHarianPoli);
 
         MenuBar.add(jMenu6);
 
@@ -14462,6 +14477,12 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_MnInfoMobileJKNActionPerformed
 
+    private void MnLaporanHarianPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnLaporanHarianPoliActionPerformed
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        Valid.panggilUrl("laporanharianpoli/cobadululagi.php");
+        this.setCursor(Cursor.getDefaultCursor());
+    }//GEN-LAST:event_MnLaporanHarianPoliActionPerformed
+
     private void btnKategoriPerpustakaanActionPerformed(java.awt.event.ActionEvent evt) {
         isTutup();
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -20661,6 +20682,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
     private javax.swing.JMenuItem MnInfoLaborat3;
     private javax.swing.JMenuItem MnInfoMobileJKN;
     private javax.swing.JMenuItem MnKoleksiPenelitian;
+    private javax.swing.JMenuItem MnLaporanHarianPoli;
     private javax.swing.JMenuItem MnLogin;
     private javax.swing.JMenuItem MnPengajuanCutiPegawai;
     private javax.swing.JMenuItem MnRekapBulanan;

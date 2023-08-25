@@ -1,0 +1,14 @@
+.judulUtama {
+    text-align: center;
+}
+
+.tabelUtama{
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 80%;
+}
+th, tr, td {
+    border: 1px solid black;
+}
+
+

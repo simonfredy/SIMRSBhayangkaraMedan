@@ -46,7 +46,7 @@ public class DlgPemberianDiet extends javax.swing.JDialog {
         initComponents();
         
         tabMode=new DefaultTableModel(null,new Object[]{
-                "No.Rawat","Nama Pasien","Kamar","Tanggal","Waktu","Jam","Diet","Diagnosa","Kode Kamar","Kode Diet"
+                "No.Rawat","Nama Pasien","Kamar","Tanggal","Waktu","Jam","Diet","Bentuk Makanan","Diagnosa"
             }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
