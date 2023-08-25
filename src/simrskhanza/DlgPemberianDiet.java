@@ -54,7 +54,7 @@ public class DlgPemberianDiet extends javax.swing.JDialog {
         tbDataDiet.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbDataDiet.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < 8; i++) {
             TableColumn column = tbDataDiet.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(105);
@@ -72,13 +72,7 @@ public class DlgPemberianDiet extends javax.swing.JDialog {
                 column.setPreferredWidth(55);
             }else if(i==7){
                 column.setPreferredWidth(170);
-            }else if(i==8){
-                column.setMinWidth(0);
-                column.setMaxWidth(0);
-            }else if(i==9){
-                column.setMinWidth(0);
-                column.setMaxWidth(0);
-            }
+            }           
         }
         tbDataDiet.setDefaultRenderer(Object.class, new WarnaTable());
 
@@ -1236,7 +1230,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_BtnSeek3ActionPerformed
 
     private void BtnSeek3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnSeek3KeyPressed
-
+        //kosong
     }//GEN-LAST:event_BtnSeek3KeyPressed
 
     /**
