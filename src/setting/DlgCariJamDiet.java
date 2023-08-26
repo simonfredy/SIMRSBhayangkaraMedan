@@ -382,6 +382,6 @@ public final class DlgCariJamDiet extends javax.swing.JDialog {
     }
     
     public void isCek(){        
-       BtnTambah.setEnabled(akses.getbentukmakan_pasien());
+       BtnTambah.setEnabled(akses.getjam_diet_pasien());
     }
 }

@@ -367,16 +367,16 @@ public final class DlgCariBentukMakan extends javax.swing.JDialog {
     private void tampil() {
         Valid.tabelKosong(tabMode);
         try{
-            file=new File("./cache/diet.iyem");
+            file=new File("./cache/bentukmakan.iyem");
             file.createNewFile();
             fileWriter = new FileWriter(file);
             iyem="";
-            ps=koneksi.prepareStatement("select diet.kd_diet, diet.nama_diet from diet order by diet.nama_diet");
+            ps=koneksi.prepareStatement("select bentuk_makan_diet.kd_bentuk_makan, bentuk_makan_diet.bentuk_makan from bentuk_makan_diet order by bentuk_makan_diet.bentuk_makan");
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
                     tabMode.addRow(new Object[]{rs.getString(1),rs.getString(2)});
-                    iyem=iyem+"{\"KodeDiet\":\""+rs.getString(1)+"\",\"NamaDiet\":\""+rs.getString(2)+"\"},";
+                    iyem=iyem+"{\"KodeBentukMakan\":\""+rs.getString(1)+"\",\"NamaBentukMakan\":\""+rs.getString(2)+"\"},";
                 }
             } catch (Exception e) {
                 System.out.println("Notif : "+e);
@@ -388,7 +388,7 @@ public final class DlgCariBentukMakan extends javax.swing.JDialog {
                     ps.close();
                 }
             }
-            fileWriter.write("{\"diet\":["+iyem.substring(0,iyem.length()-1)+"]}");
+            fileWriter.write("{\"bentukmakan\":["+iyem.substring(0,iyem.length()-1)+"]}");
             fileWriter.flush();
             fileWriter.close();
             iyem=null;
@@ -400,15 +400,15 @@ public final class DlgCariBentukMakan extends javax.swing.JDialog {
     
     private void tampil2() {
         try {
-            myObj = new FileReader("./cache/diet.iyem");
+            myObj = new FileReader("./cache/bentukmakan.iyem");
             root = mapper.readTree(myObj);
             Valid.tabelKosong(tabMode);
             response = root.path("diet");
             if(response.isArray()){
                 for(JsonNode list:response){
-                    if(list.path("KodeDiet").asText().toLowerCase().contains(TCari.getText().toLowerCase())||list.path("NamaDiet").asText().toLowerCase().contains(TCari.getText().toLowerCase())){
+                    if(list.path("KodeBentukMakan").asText().toLowerCase().contains(TCari.getText().toLowerCase())||list.path("NamaBentukMakan").asText().toLowerCase().contains(TCari.getText().toLowerCase())){
                         tabMode.addRow(new Object[]{
-                            list.path("KodeDiet").asText(),list.path("NamaDiet").asText()
+                            list.path("KodeBentukMakan").asText(),list.path("NamaBentukMakan").asText()
                         });                    }
                 }
             }
@@ -429,6 +429,6 @@ public final class DlgCariBentukMakan extends javax.swing.JDialog {
     }
     
     public void isCek(){        
-       BtnTambah.setEnabled(akses.getdiet_pasien());
+       BtnTambah.setEnabled(akses.getbentukmakan_pasien());
     }
 }
