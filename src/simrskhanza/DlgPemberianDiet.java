@@ -151,6 +151,31 @@ public class DlgPemberianDiet extends javax.swing.JDialog {
             public void windowDeactivated(WindowEvent e) {}
         });
         
+        bentukmakan.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {}
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if(akses.getform().equals("DlgPemberianDiet")){
+                    if(diet.getTable().getSelectedRow()!= -1){  
+                        //KdDiet.setText(bentukmakan.getTable().getValueAt(bentukmakan.getTable().getSelectedRow(),0).toString());
+                        NmBentukDiet.setText(bentukmakan.getTable().getValueAt(bentukmakan.getTable().getSelectedRow(),1).toString());
+                        NmBentukDiet.requestFocus();                           
+                    }                         
+                }
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
+        
         bangsal.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {}
@@ -1420,6 +1445,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             WaktuDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(),4).toString());
             JamDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(),5).toString());
             NmDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(),6).toString());
+            NmBentukDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(),8).toString());
             Kamar.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(),8).toString());
             KdDiet.setText(tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(),9).toString());
             Valid.SetTgl(DTPTgl,tbDataDiet.getValueAt(tbDataDiet.getSelectedRow(),3).toString());
