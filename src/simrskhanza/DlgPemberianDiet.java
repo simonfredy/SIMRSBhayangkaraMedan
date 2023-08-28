@@ -46,7 +46,7 @@ public class DlgPemberianDiet extends javax.swing.JDialog {
         initComponents();
         
         tabMode=new DefaultTableModel(null,new Object[]{
-                "No.Rawat","Nama Pasien","Kamar","Tanggal","Waktu","Jam","Diet","Bentuk Makanan","Diagnosa"
+                "No.Rawat","Nama Pasien","Kamar","Tanggal","Waktu","Jam","Diet","Bentuk Makanan","Diagnosa","Kode Kamar","Kode Diet"
             }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -887,13 +887,16 @@ public class DlgPemberianDiet extends javax.swing.JDialog {
                 Valid.textKosong(KdDiet,"diet");
             }else if(JamDiet.getText().trim().equals("")){
                 Valid.textKosong(WaktuDiet,"Waktu Diet");
+            }else if(NmBentukDiet.getText().trim().equals("")){
+                Valid.textKosong(NmBentukDiet, "Bentuk Diet");
             }else{
                 if(Sequel.menyimpantf("detail_beri_diet","'"+TNoRw.getText()+"','"+Kamar.getText()+"','"+
                         Valid.SetTgl(DTPTgl.getSelectedItem()+"")+"','"+
                         WaktuDiet.getText()+"','"+
-                        KdDiet.getText()+"'","data")==true){
+                        KdDiet.getText()+"'"+
+                        NmBentukDiet.getText()+"'","data")==true){
                     tabMode.addRow(new String[]{
-                        TNoRw.getText(),TPasien.getText(),Ruang.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),WaktuDiet.getText(),JamDiet.getText(),NmDiet.getText(),"-",Kamar.getText(),KdDiet.getText()
+                        TNoRw.getText(),TPasien.getText(),Ruang.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),WaktuDiet.getText(),JamDiet.getText(),NmDiet.getText(),"-",Kamar.getText(),KdDiet.getText(),NmBentukDiet.getText()
                     });
                     LCount.setText(""+tabMode.getRowCount());
                     emptTeks();
@@ -937,7 +940,8 @@ public class DlgPemberianDiet extends javax.swing.JDialog {
                             "where no_rawat='"+TNoRw.getText()+"' " +
                             "and tanggal='"+Valid.SetTgl(DTPTgl.getSelectedItem()+"")+"' " +
                             "and waktu='"+WaktuDiet.getText()+"' " +
-                            "and kd_diet='"+KdDiet.getText()+"'")==true){
+                            "and kd_diet='"+KdDiet.getText()+"'"+
+                            "and bentuk_makan_diet='"+NmBentukDiet)==true){
                         tabMode.removeRow(tbDataDiet.getSelectedRow());
                         LCount.setText(""+tabMode.getRowCount());
                     }

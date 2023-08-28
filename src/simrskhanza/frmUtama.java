@@ -14479,7 +14479,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
 
     private void MnLaporanHarianPoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnLaporanHarianPoliActionPerformed
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        Valid.panggilUrl("laporanharianpoli/cobadululagi.php");
+        Valid.panggilUrl("laporanharianpoli/index.php");
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_MnLaporanHarianPoliActionPerformed
 

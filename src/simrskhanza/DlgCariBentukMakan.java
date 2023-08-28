@@ -59,7 +59,7 @@ public final class DlgCariBentukMakan extends javax.swing.JDialog {
         this.setLocation(10,2);
         setSize(656,250);
 
-        Object[] row={"Kode Diet","Nama Diet"};
+        Object[] row={"Kode Bentuk Makan","Nama Bentuk Makan"};
         
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
@@ -103,7 +103,7 @@ public final class DlgCariBentukMakan extends javax.swing.JDialog {
             });
         }
     }
-    private DlgDiet diet=new DlgDiet(null,false);
+    private DlgBentukMakan bentukmakan=new DlgBentukMakan(null,false);
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -297,12 +297,12 @@ public final class DlgCariBentukMakan extends javax.swing.JDialog {
     private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         //diet.setModal(true);
-        diet.emptTeks();
-        diet.isCek();
-        diet.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-        diet.setLocationRelativeTo(internalFrame1);
-        diet.setAlwaysOnTop(false);
-        diet.setVisible(true);
+        bentukmakan.emptTeks();
+        bentukmakan.isCek();
+        bentukmakan.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        bentukmakan.setLocationRelativeTo(internalFrame1);
+        bentukmakan.setAlwaysOnTop(false);
+        bentukmakan.setVisible(true);
         this.setCursor(Cursor.getDefaultCursor());   
         
     }//GEN-LAST:event_BtnTambahActionPerformed
@@ -313,7 +313,7 @@ public final class DlgCariBentukMakan extends javax.swing.JDialog {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
-            if(Valid.daysOld("./cache/diet.iyem")<30){
+            if(Valid.daysOld("./cache/bentukmakan.iyem")<30){
                 tampil2();
             }else{
                 tampil();
