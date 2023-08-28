@@ -2367,7 +2367,7 @@
             
             // 	INSTALASI HEMODIALISA
             echo "<tr>";
-            echo "<td align='center'>41</td>";
+            echo "<td align='center'>38</td>";
             echo "<td>INSTALASI HEMODIALISA</td>";
 
             // INSTALASI HEMODIALISA UMUM BARU
